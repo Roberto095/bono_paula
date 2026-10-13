@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz cumpleaños, Paula</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- PANTALLA 1: LA CARTA -->
+  <section id="pantalla-carta" class="pantalla">
+    <article class="carta">
+      <h1>Feliz cumpleaños, Paula 🎉</h1>
+
+      <div class="mensaje">
+        <p>A veces me da por pensar en cómo pasa el tiempo y en todas esas personas que, sin proponérselo, terminan convirtiéndose en una parte bonita de nuestra historia. Tú eres una de ellas.</p>
+
+        <p>Todavía recuerdo aquellos días en el colegio, cuando hablábamos y el tiempo parecía transcurrir de otra manera. Y recuerdo también aquella vez que fuimos a Luciérnagas, compartiendo una copa de vino, conversando y dejando que la noche transcurriera sin demasiadas preocupaciones. No sé si tú recuerdes ese momento de la misma manera que yo, pero hay algo de aquella noche que todavía conservo con cariño. Quizá porque, sin saberlo, estábamos construyendo uno de esos recuerdos a los que uno regresa mucho tiempo después.</p>
+
+        <p>Me gusta pensar que la memoria funciona un poco como esas viejas canciones que uno vuelve a escuchar después de muchos años: quizá ya no estamos en el mismo lugar, quizá algunas cosas han cambiado, pero basta un instante para regresar a lo que fuimos.</p>
+
+        <p>Y es curioso cómo sucede. Uno puede pasar días enteros sin pensar en el pasado, hasta que una conversación, una canción o una noche cualquiera nos devuelve a un momento que creíamos guardado para siempre. Entonces recuerdo aquellas charlas en el colegio, aquella copa de vino en Luciérnagas y tantas pequeñas cosas que, vistas desde ahora, tienen un valor que quizá nunca imaginé darles en su momento.</p>
+
+        <p>Supongo que hay personas que terminan habitando esos pequeños rincones de nuestra memoria sin hacer demasiado ruido. No necesitan estar presentes todos los días ni hablar con nosotros a cada instante para seguir siendo importantes. A veces basta con saber que compartimos una parte del camino, que hubo conversaciones que nos hicieron bien y momentos que, por alguna razón, todavía nos sacan una sonrisa.</p>
+
+        <p class="destacada">Y tú eres una de esas personas.</p>
+
+        <p>Aunque ahora no hablemos tanto como antes, eso no hace que los recuerdos pierdan su valor. Hay algo bonito en poder mirar hacia atrás y encontrar personas a las que uno recuerda con cariño, sin necesidad de que el tiempo se detenga ni de que las cosas sean exactamente como antes.</p>
+
+        <p>Hoy deseo que la vida te regale muchas razones para sonreír, que encuentres tranquilidad en los días difíciles, que nunca te falte alguien con quien conversar durante horas y que siempre tengas motivos para brindar, aunque sea por las cosas más pequeñas.</p>
+
+        <p>Y si algún día volvemos a coincidir en un lugar como Luciérnagas, quizá podamos compartir otra copa de vino y conversar sobre todo lo que ha pasado desde entonces. Tal vez descubramos que algunas cosas han cambiado y que otras siguen intactas. Me gusta pensar que todavía podremos sonreír al recordar aquellos días.</p>
+
+        <p>Me alegra que la vida nos haya permitido coincidir y compartir algunos capítulos que, aunque hoy pertenezcan al pasado, siguen teniendo un lugar especial para mí. Porque uno nunca sabe cuáles serán los momentos que terminará recordando años después, ni qué personas aparecerán de pronto en su memoria cuando menos lo espere.</p>
+
+        <p>Y quizá ahí esté lo bonito de todo esto: en que hay recuerdos que no necesitan repetirse para seguir siendo importantes, y personas a las que uno puede seguir guardándoles cariño incluso cuando la vida cambia las formas de estar presentes.</p>
+
+        <p>Espero que este nuevo año de tu vida esté lleno de momentos que valga la pena recordar, de personas que te hagan sentir querida y de esas pequeñas casualidades que terminan convirtiéndose en historias.</p>
+
+        <p>Que la vida sea bonita contigo, Paula López. Y que, cuando pasen los años, tengas muchos recuerdos hermosos a los que regresar, de esos que te hagan sonreír en silencio y pensar que, después de todo, hubo momentos que valieron la pena.</p>
+
+        <p class="abrazo">Un abrazo enorme. ❤️</p>
+      </div>
+
+      <p class="firma">Roberto</p>
+
+      <button id="btn-continuar" class="boton">Tengo un regalo para ti 🎁</button>
+    </article>
+  </section>
+
+  <!-- PANTALLA 2: EL BONO -->
+  <section id="pantalla-bono" class="pantalla oculto">
+    <div class="encabezado-bono">
+      <span class="sello">BONO COMODÍN · N.º 0001</span>
+      <h2>Un plan conmigo, el que tú elijas</h2>
+      <p>Desliza las tarjetas y escoge tu plan favorito.</p>
+      <p id="fecha-limite" class="fecha-limite"></p>
+    </div>
+
+    <div class="carrusel-contenedor">
+      <button class="flecha" id="flecha-izq" aria-label="Anterior">‹</button>
+      <div class="carrusel" id="carrusel"></div>
+      <button class="flecha" id="flecha-der" aria-label="Siguiente">›</button>
+    </div>
+
+    <div class="puntos" id="puntos"></div>
+
+    <p class="letra-pequena">
+      Válido una sola vez · No acumulable · Incluye risas garantizadas ·
+      Si no eliges a tiempo, elijo yo 😄
+    </p>
+  </section>
+
+  <!-- PANTALLA 3: BONO CANJEADO -->
+  <section id="pantalla-final" class="pantalla oculto">
+    <article class="carta final">
+      <div class="emoji-grande" id="final-emoji">🎉</div>
+      <h2 id="final-titulo">¡Bono canjeado!</h2>
+      <p id="final-texto"></p>
+      <a id="btn-whatsapp" class="boton" href="#" target="_blank" rel="noopener">Avisarle a Roberto por WhatsApp 💬</a>
+      <button id="btn-volver" class="boton secundario">Cambiar de plan</button>
+    </article>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

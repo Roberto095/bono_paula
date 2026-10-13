@@ -1,0 +1,277 @@
+/* ===== Colores (cámbialos aquí y cambia toda la página) ===== */
+:root {
+  --fondo: #f6ece4;
+  --papel: #fffaf3;
+  --texto: #4a3b35;
+  --acento: #c9626e;
+  --acento-oscuro: #a94d59;
+  --suave: #e9d6c9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lora", Georgia, serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.7;
+  padding: 20px 14px 40px;
+  min-height: 100vh;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* Animación de entrada para cada pantalla */
+.pantalla {
+  animation: aparecer 0.7s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== La carta ===== */
+.carta {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--papel);
+  padding: 30px 22px;
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+.carta h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.3rem;
+  color: var(--acento);
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 26px;
+}
+
+.mensaje p {
+  font-size: 1.05rem;
+  margin-bottom: 18px;
+}
+
+.mensaje .destacada {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  color: var(--acento);
+  text-align: center;
+  margin: 30px 0;
+}
+
+.mensaje .abrazo {
+  text-align: center;
+  font-style: italic;
+  margin-top: 28px;
+}
+
+.firma {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  text-align: right;
+  margin: 10px 0 26px;
+}
+
+/* ===== Botones ===== */
+.boton {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  text-align: center;
+  text-decoration: none;
+  background: var(--acento);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.boton:hover  { background: var(--acento-oscuro); }
+.boton:active { transform: scale(0.98); }
+
+.boton.secundario {
+  background: transparent;
+  color: var(--acento);
+  border: 2px solid var(--acento);
+  margin-top: 12px;
+}
+
+/* ===== Pantalla del bono ===== */
+.encabezado-bono {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.sello {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  border: 2px dashed var(--acento);
+  color: var(--acento);
+  padding: 4px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.encabezado-bono h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.fecha-limite {
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-top: 8px;
+  color: var(--acento-oscuro);
+}
+
+/* ===== Carrusel ===== */
+.carrusel-contenedor {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;      /* oculta la barra en Firefox */
+}
+
+.carrusel::-webkit-scrollbar { display: none; }
+
+.tarjeta {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  padding: 0 6px;
+}
+
+.tarjeta-interior {
+  background: var(--papel);
+  border: 2px dashed var(--suave);
+  border-radius: 16px;
+  padding: 30px 22px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tarjeta .emoji {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.tarjeta h3 {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.9rem;
+  color: var(--acento);
+}
+
+.tarjeta.comodin .tarjeta-interior {
+  border-color: var(--acento);
+  background: #fff3f0;
+}
+
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--acento);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#flecha-izq { left: -4px; }
+#flecha-der { right: -4px; }
+
+.flecha:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.puntos {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--suave);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.punto.activo {
+  background: var(--acento);
+  transform: scale(1.3);
+}
+
+.letra-pequena {
+  max-width: 600px;
+  margin: 10px auto 0;
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ===== Pantalla final ===== */
+.final {
+  text-align: center;
+}
+
+.final h2 {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.2rem;
+  color: var(--acento);
+  margin: 10px 0;
+}
+
+.final p {
+  margin-bottom: 24px;
+}
+
+.emoji-grande {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+/* En pantallas grandes, flechas fuera de la tarjeta */
+@media (min-width: 700px) {
+  #flecha-izq { left: -50px; }
+  #flecha-der { right: -50px; }
+}
