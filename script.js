@@ -68,9 +68,9 @@ function mostrarFechaLimite() {
   const fecha = FECHA_LIMITE.toLocaleDateString("es-CO", { day: "numeric", month: "long" });
 
   if (hoy > FECHA_LIMITE) {
-    texto.textContent = "Se acabó el tiempo para elegir… ahora el plan lo escojo yo 😄";
+    texto.textContent = "Se acabó el tiempo para elegir… ahora el plan lo escojo yo.";
   } else {
-    texto.textContent = `Tienes hasta el ${fecha} para elegir. Si no, elijo yo 😉`;
+    texto.textContent = `Tienes hasta el ${fecha} para elegir. Si no, elijo yo.`;
   }
 }
 
@@ -85,7 +85,7 @@ function crearCarrusel() {
         <div class="emoji">${plan.emoji}</div>
         <h3>${plan.titulo}</h3>
         <p>${plan.texto}</p>
-        <button class="boton">${plan.comodin ? "Sorpréndeme 🎲" : "¡Elijo este! 💖"}</button>
+        <button class="boton">${plan.comodin ? "Sorpréndeme" : "¡Elijo este!"}</button>
       </div>
     `;
     tarjeta.querySelector("button").addEventListener("click", () => elegirPlan(plan));
@@ -132,13 +132,13 @@ function elegirPlan(plan) {
   if (plan.comodin) {
     document.getElementById("final-titulo").textContent = "¡Confías en mí!";
     document.getElementById("final-texto").textContent =
-      "Entonces el plan lo escojo yo. Escríbeme y cuadramos el día 😉";
-    mensaje = "¡Hola Roberto! Usé mi bono comodín 🃏 y te dejo elegir el plan a ti. ¿Cuándo nos vemos?";
+      "Entonces el plan lo escojo yo. Escríbeme y cuadramos el día.";
+    mensaje = "¡Hola RSV! Usé mi bono comodín y te dejo elegir el plan a ti. ¿Cuándo nos vemos?";
   } else {
     document.getElementById("final-titulo").textContent = "¡Bono canjeado!";
     document.getElementById("final-texto").textContent =
       `Elegiste: ${plan.titulo}. Ahora solo falta escoger el día.`;
-    mensaje = `¡Hola Roberto! Canjeé mi bono de cumpleaños 🎁 y elegí: ${plan.titulo} ${plan.emoji}. ¿Cuándo nos vemos?`;
+    mensaje = `¡Hola RSV! Canjeé mi bono de cumpleaños y elegí: ${plan.titulo}. ¿Cuándo nos vemos?`;
   }
 
   document.getElementById("btn-whatsapp").href =
